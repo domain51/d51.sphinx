@@ -1,0 +1,60 @@
+{% extends "!layout.html" %}
+
+{% block header %}
+<div id="head">
+    <h1>Domain51</h1>
+    <!-- Thanks, Roder! -->
+    <h2><span>Hacking a better world</span></h2>
+</div>
+
+
+{% block quicksearch %}
+<div id="quicksearch">
+    <form class="search" action="{{ pathto('search') }}" method="get">
+        <input class="input_hint" type="text" name="q" size="18"
+               title="{{ _('search...') }}" />
+        <input type="submit" value="{{ _('Go') }}" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+
+{% endblock %}
+
+{% endblock %}
+
+{% block relbar1 %}{% endblock %}
+
+{% block sidebarsearch %}{% endblock %}
+
+{% block footer %}
+<div class="footer">
+    <div id="copyright">
+        <p>
+            <span xmlns:dc="http://purl.org/dc/elements/1.1/"
+                  href="http://purl.org/dc/dcmitype/Text"
+                  property="dc:title"
+                  rel="dc:type">
+                  <a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a>
+            </span>
+            by
+            <a xmlns:cc="http://creativecommons.org/ns#"
+               href="http://domain51.com"
+               property="cc:attributionName"
+               rel="cc:attributionURL">Domain51, LLC</a>
+            is licensed under a<br/>
+            <a rel="license"
+               href="http://creativecommons.org/licenses/by-sa/3.0/us/">
+                Creative Commons Attribution-Share Alike 3.0 United States License</a>.
+        </p>
+
+        <p>Copyright &copy; MCMXCIX&mdash;MMX <a href="http://domain51.com/">Domain51</a></p>
+    </div>
+</div>
+<script type="text/javascript" src="{{ pathto('_static/d51.jquery.input_hint.js', 1) }}"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.input_hint').input_hint();
+});
+</script>
+{% endblock %}
